@@ -75,6 +75,8 @@ public class GM_ArmsRace_Rematch
         _waitingForOtherPlayer(GM_ArmsRace.instance) = true;
         ResetMatchKeepCards();
         RoundsContinueMod.instance.DoContinue();
+        // Counteract the roundsToWinGame += 2 from the DoContinue Function
+        GM_ArmsRace.instance.roundsToWinGame -= 2;
         GameManager.instance.battleOngoing = false;
         yield return new WaitForSecondsRealtime(1f);
         GameManager.instance.battleOngoing = true;
