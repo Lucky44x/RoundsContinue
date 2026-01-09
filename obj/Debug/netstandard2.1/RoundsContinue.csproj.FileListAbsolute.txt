@@ -33,3 +33,4 @@ C:\Users\nickb\Desktop\Github\RoundsContinue\obj\Debug\netstandard2.1\RoundsCont
 C:\Users\nickb\Desktop\Github\RoundsContinue\obj\Debug\netstandard2.1\RoundsContinue.pdb
 C:\Users\nickb\Desktop\Github\RoundsContinue\bin\Debug\netstandard2.1\PhotonChat.dll
 C:\Users\nickb\Desktop\Github\RoundsContinue\bin\Debug\netstandard2.1\PhotonUnityNetworking.Utilities.dll
+C:\Users\nickb\Desktop\Github\RoundsContinue\obj\Debug\netstandard2.1\RoundsContinue.sourcelink.json
