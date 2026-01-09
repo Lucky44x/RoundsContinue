@@ -31,6 +31,9 @@ public class RoundsContinueMod : BaseUnityPlugin
     private readonly MethodInfo _displayYesNoMethod = AccessTools.Method(typeof(UIHandler), "DisplayYesNoLoop", [typeof(Player), typeof(Action<PopUpHandler.YesNo>)]);
     public void DisplayYesNoLoop(Player pickingPlayer, Action<PopUpHandler.YesNo> functionToCall) => _displayYesNoMethod.Invoke(UIHandler.instance, [pickingPlayer, functionToCall]);
     
+    private readonly MethodInfo _getRematchYesNo = AccessTools.Method(typeof(GM_ArmsRace), "GetRematchYesNo", [typeof(PopUpHandler.YesNo)]);
+    public void GetRematchYesNo(PopUpHandler.YesNo yesNo) => _getRematchYesNo.Invoke(GM_ArmsRace.instance, [yesNo]);
+    
     private readonly MethodInfo _getFirstPlayerInTeamMethod = AccessTools.Method(typeof(PlayerManager), "GetFirstPlayerInTeam", [typeof(int)]);
     public Player GetFirstPlayerInTeam(int teamID) => _getFirstPlayerInTeamMethod.Invoke(PlayerManager.instance, [teamID]) as Player;
     

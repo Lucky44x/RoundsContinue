@@ -16,9 +16,13 @@ public class GM_ArmsRace_Rematch
     static AccessTools.FieldRef<GM_ArmsRace, LocalizedString> _localizedWaiting = AccessTools.FieldRefAccess<GM_ArmsRace, LocalizedString>("m_localizedWaiting");
     static AccessTools.FieldRef<GM_ArmsRace, bool> _waitingForOtherPlayer = AccessTools.FieldRefAccess<GM_ArmsRace, bool>("waitingForOtherPlayer");
     static AccessTools.FieldRef<GM_ArmsRace, PhotonView> _view = AccessTools.FieldRefAccess<GM_ArmsRace, PhotonView>("view");
+
+    private static int winningTeamID_cached;
     
     static bool Prefix(GM_ArmsRace __instance, int winningTeamID)
     {
+        winningTeamID_cached = winningTeamID;
+        
         //Display Continue Message
         DisplayTextTeamColor(winningTeamID, _localizedContinue(__instance));
         
@@ -47,7 +51,15 @@ public class GM_ArmsRace_Rematch
             GM_ArmsRace.instance.StartCoroutine(IDoContinue());
             return;
         }
-        RoundsContinueMod.instance.DoRestart();
+        GM_ArmsRace.instance.StartCoroutine(AskRematch());
+    }
+
+    static IEnumerator AskRematch()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        // Ask for Rematch
+        DisplayTextTeamColor(winningTeamID_cached, _localizedRematch(GM_ArmsRace.instance));
+        RoundsContinueMod.instance.DisplayYesNoLoop(RoundsContinueMod.instance.GetFirstPlayerInTeam(winningTeamID_cached), RoundsContinueMod.instance.GetRematchYesNo);
     }
 
     static IEnumerator IDoContinue()

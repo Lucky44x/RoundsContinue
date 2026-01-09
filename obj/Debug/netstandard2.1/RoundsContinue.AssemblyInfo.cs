@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoundsContinue")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb4045bce089052f586f1c00f443762e8b7a46cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48469c6794d12671f981ca84a35338a85b12f691")]
 [assembly: System.Reflection.AssemblyProductAttribute("My first plugin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoundsContinue")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
